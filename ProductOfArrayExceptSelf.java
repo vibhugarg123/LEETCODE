@@ -29,6 +29,26 @@ Follow up: Can you solve the problem in O(1) extra space complexity?
 (The output array does not count as extra space for space complexity analysis.)
 */
 
+/*
+    Algorithm-1: With Space O(N)
+    1. For each element in num array, calculate left product & right product in 2 arrays
+       For example- [1,2,3,4]
+       for 1, left[1]= 1
+              right[1]= 2*3*4= 24
+              output[1]= left[1]*right[1]=24
+       leftArray = [1, 1, 2, 6]
+       rightArray= [24,12, 4, 1]
+       outputArray=[24,12,8,6]
+       Time Complexity= O(N)+ O(N) + O(N)= O(N)
+       Space Complexity= O(N)+ O(N)= O(N)
+
+     Algorithm-2: Without Space
+     1. Maintain leftArray in result array
+     2. Take right variable & keep updating right & in-parallel calculating the output array value
+      Time Complexity= O(N)+ O(N) = O(N)
+      Space Complexity= O(1) //excluding the output array space
+ */
+
 class ProductOfArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {
         int[] result = new int[nums.length];
