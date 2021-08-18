@@ -1,4 +1,10 @@
-*.class
 .vscode
 .idea
 out
+
+ExcelSheetColumnNumber
+FactorialTrailingZeroes
+
+# Ignore files with extension `.class` & `.sm`
+*.class
+*.iml
