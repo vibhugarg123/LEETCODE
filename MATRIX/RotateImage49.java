@@ -66,6 +66,8 @@ Update the pointers, left =left +1; right= right-1;
 
 Time Complexity: O(N*N)
 Space Complexity: O(1)
+
+Approach-2 : Rotate= Transpose the Matrix -> Reverse all the rows
  */
 
 import java.util.Arrays;
