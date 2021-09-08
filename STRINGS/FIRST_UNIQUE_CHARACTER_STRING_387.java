@@ -1,8 +1,6 @@
 package STRINGS;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
 
 class FirstUniqueCharacterString387 {
     public int firstUniqChar(String s) {
@@ -21,7 +19,7 @@ class FirstUniqueCharacterString387 {
     }
 
     public static void main(String[] args) {
-        FirstUniqueCharacterString387 firstUniqueCharacterString387=new FirstUniqueCharacterString387();
+        FirstUniqueCharacterString387 firstUniqueCharacterString387 = new FirstUniqueCharacterString387();
         System.out.println(firstUniqueCharacterString387.firstUniqChar("aabb"));
     }
 }
