@@ -114,27 +114,16 @@ class LRUCache {
 
 
         cache.put(2, 1);
-        cache.printList();
-
         cache.put(3, 2);
-        cache.printList();
 
         System.out.println("Fetching key 3, value= " + cache.get(3));
-
-        cache.printList();
-
         System.out.println("Fetching key 2, value= " + cache.get(2));
-
-        cache.printList();
 
         cache.put(4, 3);
-        cache.printList();
+
 
         System.out.println("Fetching key 2, value= " + cache.get(2));
-        cache.printList();
         System.out.println("Fetching key 3, value= " + cache.get(3));
-        cache.printList();
         System.out.println("Fetching key 4, value= " + cache.get(4));
-        cache.printList();
     }
 }
