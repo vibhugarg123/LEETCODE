@@ -1,4 +1,30 @@
 package LINKED_LIST;
+/*
+Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+
+Implement the LRUCache class:
+
+1. LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
+2. int get(int key) Return the value of the key if the key exists, otherwise return -1.
+3. void put(int key, int value) Update the value of the key if the key exists.
+Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation,
+evict the least recently used key.
+
+The functions get and put must each run in O(1) average time complexity.
+
+Concept: Use Circular Doubly Linked List & Hashmap as combined data structure
+- Circular Linked List will be served as LRU cache.
+- For put()
+    * If the key is not present in cache & the size of cache is less than maximum capacity, you can add the element to front of linked list
+       & add it to hashmap <Key,Element's address>
+    * If the key is not present in cache & the cache is full, remove the least frequently used item which is present at the end of linked list
+       & remove it from cache. Add the new element as in step above
+    * If the key is already present in cache, update the value in the linked list.
+- For get()
+    * If the key is not present, return -1.
+    * If the key is present, move the element to the head of the linked list & remove from current position.
+    * return the value against the key
+ */
 
 import java.util.HashMap;
 
@@ -15,42 +41,18 @@ class Node {
     }
 }
 
-class LRUCache {
+class CircularDoublyLinkedList {
     private Node head;
-    private HashMap<Integer, Node> hashMap;
-    private int capacity;
-    private int currentCapacity;
 
-    public LRUCache(int capacity) {
-        this.hashMap = new HashMap<>(capacity);
-        this.head = null;
-        this.capacity = capacity;
-        this.currentCapacity = 0;
+    public Node getHead() {
+        return head;
     }
 
-    public int get(int key) {
-        Node x = this.hashMap.get(key);
-        //Return -1 if the key is not present in hash table
-        if (null == x) {
-            return -1;
-        }
-
-        //Check if x is present at head of linked list , if it's not present at head, make it to head.
-        if (x == head) {
-            return x.value;
-        }
-        Node tempPrev = x.prev;
-        Node tempNext = x.next;
-        x.prev.next = tempNext;
-        x.next.prev = tempPrev;
-        hashMap.remove(key);
-
-        addToFront(new Node(x.key, x.value));
-        hashMap.put(key, head);
-        return x.value;
+    public void setHead(Node head) {
+        this.head = head;
     }
 
-    private Node addToFront(Node newNode) {
+    public Node addToFront(Node newNode) {
         if (null == this.head) {
             this.head = newNode;
             return head;
@@ -69,7 +71,7 @@ class LRUCache {
         return head;
     }
 
-    private int removeLastNode() {
+    public int removeLastNode() {
         if (null == head) {
             return -1;
         }
@@ -86,25 +88,69 @@ class LRUCache {
         return keyRemoved;
     }
 
-    public void put(int key, int value) {
-
-        int x = get(key);
-        if (x != -1) {
-            head.value = value;
-            hashMap.put(key, head);
+    public void moveNodeToHead(Node x) {
+        if (x == this.head) {
             return;
         }
 
+        Node tempPrev = x.prev;
+        Node tempNext = x.next;
+        x.prev.next = tempNext;
+        x.next.prev = tempPrev;
+
+        x.prev = x.next = null;
+        addToFront(x);
+    }
+}
+
+class LRUCache {
+    private CircularDoublyLinkedList circularDoublyLinkedList;
+    private HashMap<Integer, Node> hashMap;
+    private int capacity;
+    private int currentCapacity;
+
+    public LRUCache(int capacity) {
+        this.hashMap = new HashMap<>(capacity);
+        this.circularDoublyLinkedList = new CircularDoublyLinkedList();
+        this.circularDoublyLinkedList.setHead(null);
+        this.capacity = capacity;
+        this.currentCapacity = 0;
+    }
+
+    public int get(int key) {
+        Node x = this.hashMap.get(key);
+        //Return -1 if the key is not present in hash table
+        if (null == x) {
+            return -1;
+        }
+
+        this.circularDoublyLinkedList.moveNodeToHead(x);
+
+        hashMap.put(key, this.circularDoublyLinkedList.getHead());
+        return x.value;
+    }
+
+
+    public void put(int key, int value) {
+
+        int x = get(key);
+        // if the key is already present, update the value against key in circular linked list
+        if (x != -1) {
+            this.circularDoublyLinkedList.getHead().value = value;
+            return;
+        }
+
+        //If the key is not present
         Node newNode = new Node(key, value);
         if (this.currentCapacity >= this.capacity) {
-            int keyRemoved = removeLastNode();
+            int keyRemoved = this.circularDoublyLinkedList.removeLastNode();
             if (keyRemoved != -1) {
                 hashMap.remove(keyRemoved);
                 this.capacity--;
             }
         }
 
-        Node node = addToFront(newNode);
+        Node node = this.circularDoublyLinkedList.addToFront(newNode);
         this.hashMap.put(key, node);
         this.currentCapacity++;
     }
