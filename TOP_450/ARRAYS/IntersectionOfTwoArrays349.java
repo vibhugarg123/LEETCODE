@@ -18,7 +18,7 @@ import java.util.*;
         Explanation: [4,9] is also accepted.
  */
 
-public class IntersectionOfTwoSortedArrays349 {
+public class IntersectionOfTwoArrays349 {
     public int[] intersection(int[] nums1, int[] nums2) {
         Map<Integer, Boolean> map = new HashMap<>();
         int[] res = new int[nums1.length];
@@ -44,7 +44,7 @@ public class IntersectionOfTwoSortedArrays349 {
         int[] nums1 = {4, 9, 5};
         int[] nums2 = {9, 4, 9, 8, 4};
 
-        IntersectionOfTwoSortedArrays349 intersectionOfTwoSortedArrays349 = new IntersectionOfTwoSortedArrays349();
-        System.out.println(Arrays.toString(intersectionOfTwoSortedArrays349.intersection(nums1, nums2)));
+        IntersectionOfTwoArrays349 intersectionOfTwoArrays349 = new IntersectionOfTwoArrays349();
+        System.out.println(Arrays.toString(intersectionOfTwoArrays349.intersection(nums1, nums2)));
     }
 }
