@@ -30,4 +30,13 @@ public class TreeNode {
             }
         }
     }
+
+    public void inorderTraversal(TreeNode root) {
+        if (null == root) {
+            return;
+        }
+        inorderTraversal(root.left);
+        System.out.print(root.val + " ");
+        inorderTraversal(root.right);
+    }
 }
