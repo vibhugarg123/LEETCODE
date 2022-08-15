@@ -63,17 +63,6 @@ public class TopViewOfBinaryTree {
         }
     }
 
-    private void topViewUtils(TreeNode root, int index, Map<Integer, Integer> map) {
-        if (null == root) {
-            return;
-        }
-        if (!map.containsKey(index)) {
-            map.put(index, root.val);
-        }
-        topViewUtils(root.left, index - 1, map);
-        topViewUtils(root.right, index + 1, map);
-    }
-
     List<Integer> topView(TreeNode root) {
         List<Integer> topView = new ArrayList<>();
 
