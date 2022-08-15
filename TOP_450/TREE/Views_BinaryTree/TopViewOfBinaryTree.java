@@ -1,4 +1,4 @@
-package TOP_450.TREE;
+package TOP_450.TREE.Views_BinaryTree;
 
 /*
      Problem: https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1
@@ -48,6 +48,8 @@ package TOP_450.TREE;
      Time complexity: O(n*log(n)), where n is the number of nodes in the given tree.
      Auxiliary Space : O(n), As we store nodes in the map and queue.
  */
+
+import TOP_450.TREE.TreeNode;
 
 import java.util.*;
 

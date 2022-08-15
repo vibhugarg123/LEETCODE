@@ -1,4 +1,6 @@
-package TOP_450.TREE;
+package TOP_450.TREE.Views_BinaryTree;
+
+import TOP_450.TREE.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
