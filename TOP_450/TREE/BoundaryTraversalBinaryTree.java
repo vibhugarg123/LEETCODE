@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-    [GFG] Given a Binary Tree, find its Boundary Traversal. The traversal should be in the following order:
+    [GFG] :https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/
+
+    Given a Binary Tree, find its Boundary Traversal. The traversal should be in the following order:
 
     Left boundary nodes: defined as the path from the root to the left-most node ie- the leaf node you could
     reach when you always travel preferring the left subtree over the right subtree.
