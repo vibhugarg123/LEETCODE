@@ -39,4 +39,13 @@ public class TreeNode {
         System.out.print(root.val + " ");
         inorderTraversal(root.right);
     }
+
+    public void preOrderTraversal(TreeNode root) {
+        if (null == root) {
+            return;
+        }
+        System.out.print(root.val + " ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
 }
