@@ -42,7 +42,7 @@ package TOP_450.TREE.BINARY_TREE.Views_BinaryTree;
      Auxiliary Space : O(n), As we store nodes in the map and queue.
  */
 
-import TOP_450.TREE.BINARY_TREE.TreeNode;
+import TOP_450.TREE.TreeNode;
 
 import java.util.*;
 

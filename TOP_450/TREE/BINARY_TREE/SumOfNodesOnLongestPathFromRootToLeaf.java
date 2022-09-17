@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
         Problem- https://practice.geeksforgeeks.org/problems/sum-of-the-longest-bloodline-of-a-tree/1
         Given a binary tree of size N. Your task is to complete the function sumOfLongRootToLeafPath(), that find the sum of all nodes on the longest path from root to leaf node.

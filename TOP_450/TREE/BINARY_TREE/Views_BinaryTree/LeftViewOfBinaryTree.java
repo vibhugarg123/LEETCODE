@@ -1,6 +1,6 @@
 package TOP_450.TREE.BINARY_TREE.Views_BinaryTree;
 
-import TOP_450.TREE.BINARY_TREE.TreeNode;
+import TOP_450.TREE.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

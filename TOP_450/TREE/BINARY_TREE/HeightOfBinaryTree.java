@@ -1,4 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
+
+import TOP_450.TREE.TreeNode;
+
 /*
    Given a binary tree, find its height.
    Link: https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/

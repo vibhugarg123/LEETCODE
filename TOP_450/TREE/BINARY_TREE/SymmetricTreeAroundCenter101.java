@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
 Problem-101 : https://leetcode.com/problems/symmetric-tree/
         Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).

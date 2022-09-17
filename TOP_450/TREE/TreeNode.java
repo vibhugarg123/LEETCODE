@@ -1,4 +1,4 @@
-package TOP_450.TREE.BINARY_TREE;
+package TOP_450.TREE;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -46,5 +46,14 @@ public class TreeNode {
         System.out.print(root.val + " ");
         preOrderTraversal(root.left);
         preOrderTraversal(root.right);
+    }
+
+    public void postOrderTraversal(TreeNode root) {
+        if (null == root) {
+            return;
+        }
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.print(root.val + " ");
     }
 }

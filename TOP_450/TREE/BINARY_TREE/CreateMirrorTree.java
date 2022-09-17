@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
  Problem: https://www.geeksforgeeks.org/create-a-mirror-tree-from-the-given-binary-tree/
  Given a binary tree, the task is to create a new binary tree which is a mirror image of the given binary tree.

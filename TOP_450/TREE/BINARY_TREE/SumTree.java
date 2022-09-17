@@ -21,6 +21,8 @@ package TOP_450.TREE.BINARY_TREE;
           Space Complexity: O(N)
  */
 
+import TOP_450.TREE.TreeNode;
+
 public class SumTree {
     boolean x = true;
 

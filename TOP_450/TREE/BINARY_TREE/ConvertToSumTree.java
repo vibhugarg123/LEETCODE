@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
     Problem- https://practice.geeksforgeeks.org/problems/transform-to-sum-tree/1
 

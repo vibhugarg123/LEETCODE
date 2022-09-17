@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
         Problem- https://practice.geeksforgeeks.org/problems/check-if-tree-is-isomorphic/1
             Given two Binary Trees. Check whether they are Isomorphic or not.

@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
     Problem-236: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 

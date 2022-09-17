@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
      Problem- https://www.geeksforgeeks.org/find-distance-between-two-nodes-of-a-binary-tree/
      Find the distance between two keys in a binary tree,

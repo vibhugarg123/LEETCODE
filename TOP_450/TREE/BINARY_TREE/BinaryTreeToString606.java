@@ -1,5 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
+import TOP_450.TREE.TreeNode;
+
 /*
     Problem-606: https://leetcode.com/problems/construct-string-from-binary-tree/
             Input : Preorder: [1, 2, 3, 4]
