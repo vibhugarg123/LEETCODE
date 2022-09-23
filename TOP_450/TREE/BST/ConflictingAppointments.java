@@ -104,6 +104,5 @@ public class ConflictingAppointments {
             conflictingAppointments.OverlapSearch(root, intervals[i]);
             root = conflictingAppointments.insert(root, intervals[i]);
         }
-
     }
 }
