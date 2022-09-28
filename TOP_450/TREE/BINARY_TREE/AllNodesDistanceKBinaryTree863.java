@@ -1,7 +1,9 @@
-package TREE;
+package TOP_450.TREE.BINARY_TREE;
 
-/*
-Given the root of a binary tree, the value of a target node target, and an integer k, return an array of the values of all nodes that have a distance k from the target node.
+/* Problem: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
+
+Given the root of a binary tree, the value of a target node target, and an integer k,
+return an array of the values of all nodes that have a distance k from the target node.
 
 You can return the answer in any order.
 <img src="IMAGES/863.png" />
@@ -17,9 +19,11 @@ Input: root = [1], target = 1, k = 3
 Output: []
  */
 
+import TOP_450.TREE.TreeNode;
+
 import java.util.*;
 
-class Solution {
+class AllNodesDistanceKBinaryTree863 {
 
     public HashMap<TreeNode, TreeNode> storeParent(TreeNode root) {
         if (null == root) {
@@ -106,9 +110,8 @@ class Solution {
         root.right.left = new TreeNode(0);
         root.right.right = new TreeNode(8);
 
-        Solution s = new Solution();
+        AllNodesDistanceKBinaryTree863 s = new AllNodesDistanceKBinaryTree863();
         List<Integer> result = s.distanceK(root, root.left, 2);
         result.forEach(System.out::println);
-
     }
 }
