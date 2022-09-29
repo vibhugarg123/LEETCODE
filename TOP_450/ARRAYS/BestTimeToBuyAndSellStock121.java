@@ -15,6 +15,13 @@ package TOP_450.ARRAYS;
         Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
         Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 
+        Suppose I sell on day 1, minimum price of stock so far=7, profit=0
+        Suppose I sell on day 2, minimum price of stock so far=1, profit=0
+        Suppose I sell on day 3, minimum price of stock so far=1, profit=4
+        Suppose I sell on day 4, minimum price of stock so far=1, profit=2
+        Suppose I sell on day 5, minimum price of stock so far=1, profit=5
+        Suppose I sell on day 6, minimum price of stock so far=1, profit=3
+
 
         Example 2:
 
