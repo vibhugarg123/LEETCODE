@@ -51,7 +51,7 @@ package TOP_450.ARRAYS;
                      Time Complexity:  O(N)
                      Space Complexity: O(N)
  */
-public class BestTimeToBuyAndSellStock123 {
+public class BestTimeToBuyAndSellStockIII123 {
     public int maxProfit(int[] prices) {
         if (prices.length == 0) return 0;
 
@@ -80,7 +80,7 @@ public class BestTimeToBuyAndSellStock123 {
 
     public static void main(String[] args) {
         int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
-        BestTimeToBuyAndSellStock123 bestTimeToSellAndBuyStockIII123 = new BestTimeToBuyAndSellStock123();
+        BestTimeToBuyAndSellStockIII123 bestTimeToSellAndBuyStockIII123 = new BestTimeToBuyAndSellStockIII123();
         System.out.println(bestTimeToSellAndBuyStockIII123.maxProfit(prices));
     }
 }
