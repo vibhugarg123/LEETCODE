@@ -25,6 +25,10 @@ import java.util.Arrays;
     Time Complexity :  O(N)
     Space Complexity:  O(1)
 
+    Reverse array k times.
+    - Reverse whole array [7,6,5,4,3,2,1]
+    - Reverse array from start=0 to end= k-1 [5,6,7,4,3,2,1]
+    - Reverse array from start=k to end=arr.length [5,6,7,1,2,3,4]
 
  */
 public class RotateArray189 {
