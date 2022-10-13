@@ -1,24 +1,27 @@
+package TOP_450.ARRAYS;
+
 /*
-Given n non-negative integers representing an elevation map where the width of each bar is 1,
-compute how much water it can trap after raining.
+Problem-42: https://leetcode.com/problems/trapping-rain-water/
+    Given n non-negative integers representing an elevation map where the width of each bar is 1,
+    compute how much water it can trap after raining.
 
-Example 1:
+    Example 1:
 
-Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
-Output: 6
-Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1].
-In this case, 6 units of rain water (blue section) are being trapped.
-Example 2:
+    Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+    Output: 6
+    Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1].
+    In this case, 6 units of rain water (blue section) are being trapped.
+    Example 2:
 
-Input: height = [4,2,0,3,2,5]
-Output: 9
+    Input: height = [4,2,0,3,2,5]
+    Output: 9
  */
 
 /*
 Algorithm:
     Logic: Water is stored where
-    1. Find maximum height of bar from the left end upto an index i in the array \text{left\_max}left_max.
-    2. Find maximum height of bar from the right end upto an index i in the array \text{right\_max}right_max.
+    1. Find maximum height of bar from the left end upto an index i in the array left_max.
+    2. Find maximum height of bar from the right end upto an index i in the array right_max.
     3. Iterate over the height array and update ans:
         - Add {Math.min(left[i], right[i]) - height[i]} to ans;
 
@@ -28,6 +31,7 @@ Algorithm:
 class TrappingRainWater42 {
     public int trap(int[] height) {
         int water = 0;
+
         int[] left = new int[height.length];
         int[] right = new int[height.length];
 
@@ -38,6 +42,7 @@ class TrappingRainWater42 {
             }
             left[i] = left_max;
         }
+
         int right_max = Integer.MIN_VALUE;
         for (int i = height.length - 1; i >= 0; i--) {
             if (height[i] > right_max) {
