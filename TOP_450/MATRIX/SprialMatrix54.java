@@ -1,11 +1,10 @@
-package MATRIX;
+package TOP_450.MATRIX;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 /*
-[Problem-54]
+[Problem-54]: https://leetcode.com/problems/spiral-matrix/
 Given an m x n matrix, return all elements of the matrix in spiral order.
 
 Approach 1: Set Up Boundaries
@@ -15,6 +14,9 @@ Use 4 pointers, [left, right, top, bottom] & direction variable to track which d
         5  6  7   8
         9  10 11 12
  bottom 13 14 15 16
+
+ Eg: Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+    Output: [1,2,3,6,9,8,7,4,5]
 
  Time Complexity: O(MN)
  Space Complexity: O(1)
