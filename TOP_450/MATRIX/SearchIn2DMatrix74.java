@@ -1,4 +1,4 @@
-package MODIFIED_BINARY_SEARCH;
+package TOP_450.MATRIX;
 
 /*
 [Problem-74]
@@ -17,27 +17,34 @@ Input: matrix = [   [1,3,5,7],
                 ], target = 3
 Output: true
 
+
 Observation: Since all rows are sorted and last element of each row is <= first element of next row.
 Hence, complete matrix is sorted.
 Apply binary search over the full matrix i.e first element=matrix[0][0] , last element=matrix[matrix.length-1][matrix[0].length-1]
+For eg : In linear order, middle element is 11/2=5.
+            nCols=4
+            to find row and column index of 11-
+                row(middle)=5/4=1
+                col(middle)=5%4=1
+                [1,1]= 11 element
+
 Assuming number of rows=m, columns=n
 Number of elements=m*n
 Time Complexity: O(log(mn))
  */
 
-import java.util.Arrays;
-
 class SearchIn2DMatrix74 {
 
     public boolean searchMatrix(int[][] matrix, int target) {
-        int rows = matrix.length;
-        int columns = matrix[0].length;
-        int start = 0, end = (rows * columns) - 1;
+        int nRows = matrix.length;
+        int nColumns = matrix[0].length;
+        int start = 0, end = (nRows * nColumns) - 1;
+
         while (start <= end) {
             int middle = start + (end - start) / 2;
 
-            int row = middle / columns;
-            int column = middle % columns;
+            int row = middle / nColumns;
+            int column = middle % nColumns;
             int currentElement = matrix[row][column];
 
             if (target == currentElement) {
