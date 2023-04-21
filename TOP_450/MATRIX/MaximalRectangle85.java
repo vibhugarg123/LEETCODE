@@ -13,7 +13,11 @@ import java.util.Stack;
                      ["1","1","1","1","1"],
                      ["1","0","0","1","0"]]
 
+        Time Complexity: O(R x C).
+        Only one traversal of the matrix is required, so the time complexity is O(R X C)
 
+        Space Complexity: O(C).
+        Stack is required to store the columns, so space complexity is O(C)
     Output: 6
  */
 public class MaximalRectangle85 {
