@@ -8,7 +8,7 @@ import java.util.Stack;
         Problem-173: https://leetcode.com/problems/binary-search-tree-iterator/description/
  */
 public class BinaryTreeSearchIterator173 {
-    Stack<TreeNode> st = new Stack<>();
+    private Stack<TreeNode> st = new Stack<>();
 
     public BinaryTreeSearchIterator173(TreeNode root) {
         store(root);
