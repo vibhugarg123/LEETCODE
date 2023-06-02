@@ -1,4 +1,4 @@
-package TOP_450.TREE.BINARY_TREE;
+package TOP_450.PRIORITY_QUEUE;
 
 import java.awt.geom.Point2D;
 import java.util.Comparator;
