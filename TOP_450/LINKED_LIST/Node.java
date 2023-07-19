@@ -7,13 +7,21 @@ public class Node {
     Node() {
     }
 
-    Node(int val) {
+    public Node(int val) {
         this.val = val;
     }
 
-    Node(int val, Node next) {
+    public Node(int val, Node next) {
         this.val = val;
         this.next = next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
+    public Node getNext() {
+        return this.next;
     }
 
     void print() {
