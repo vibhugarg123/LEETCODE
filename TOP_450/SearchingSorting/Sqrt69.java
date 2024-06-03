@@ -1,7 +1,7 @@
 package TOP_450.SearchingSorting;
 
 /*
-    Problem-69: Sqrt(x)
+    Problem-69: Sqrt(x): https://leetcode.com/problems/sqrtx/description/
     Given a non-negative integer x, return the square root of x rounded down to the nearest integer.
     The returned integer should be non-negative as well.
 
