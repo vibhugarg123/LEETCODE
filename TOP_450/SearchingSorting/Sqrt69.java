@@ -31,7 +31,8 @@ public class Sqrt69 {
     int result = 1;
     while (start <= end) {
       int mid = start + (end - start) / 2;
-      if (mid * mid <= x) {
+      // prevent integer overflow
+      if (mid <= (x / mid)) {
         // max of all the possible mids that can be output.
         result = mid;
         start = mid + 1;
