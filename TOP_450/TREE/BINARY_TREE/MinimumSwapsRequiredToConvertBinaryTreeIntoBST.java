@@ -1,12 +1,7 @@
 package TOP_450.TREE.BINARY_TREE;
 
 
-import com.sun.tools.javac.util.Pair;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /*
         Problem- https://www.geeksforgeeks.org/minimum-swap-required-convert-binary-tree-binary-search-tree
@@ -41,9 +36,7 @@ public class MinimumSwapsRequiredToConvertBinaryTreeIntoBST {
         inorderTraversal(A, list, 0);
 
         // Return minimum number of Swaps to sort an array
-        return minSwapsToSortAnArray(list.stream()
-                .mapToInt(Integer::intValue)
-                .toArray());
+        return minSwapsToSortAnArray(list.stream().mapToInt(Integer::intValue).toArray());
     }
 
     private void inorderTraversal(int[] A, List<Integer> list, int index) {
@@ -55,7 +48,7 @@ public class MinimumSwapsRequiredToConvertBinaryTreeIntoBST {
 
 
     public int minSwapsToSortAnArray(int[] A) {
-        List<Pair<Integer, Integer>> pairList = new ArrayList<>();
+        List<AbstractMap.SimpleEntry<Integer, Integer>> pairList = new ArrayList<>();
         //Storing Pairs of elements with indices
         // Eg: A[] = { 8, 6, 9, 5, 10, 7, 11 }
         // Eg: Pairs={{8,0},
@@ -66,7 +59,7 @@ public class MinimumSwapsRequiredToConvertBinaryTreeIntoBST {
         //            {7,5},
         //            {11,6}}
         for (int i = 0; i < A.length; i++) {
-            pairList.add(new Pair<>(A[i], i));
+            pairList.add(new AbstractMap.SimpleEntry<>(A[i], i));
         }
 
         // sorting pairs of elements with indices by elements value
@@ -77,16 +70,16 @@ public class MinimumSwapsRequiredToConvertBinaryTreeIntoBST {
         //            {9,2},
         //            {10,4},
         //            {11,6}}
-        pairList.sort(Comparator.comparing(o -> o.fst));
+        pairList.sort(Comparator.comparing(AbstractMap.SimpleEntry::getKey));
 
         int numberOfSwaps = 0;
         for (int i = 0; i < pairList.size(); i++) {
-            Pair<Integer, Integer> temp = pairList.get(i);
+            AbstractMap.SimpleEntry<Integer, Integer> temp = pairList.get(i);
             // It means you are at correct index i.e element a
-            if (temp.snd == i) continue;
+            if (temp.getValue() == i) continue;
             //Find the correct index
             numberOfSwaps++;
-            Collections.swap(pairList, i, temp.snd);
+            Collections.swap(pairList, i, temp.getValue());
         }
         return numberOfSwaps;
     }
