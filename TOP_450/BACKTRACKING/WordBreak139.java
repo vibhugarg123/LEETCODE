@@ -34,6 +34,7 @@ public class WordBreak139 {
             while (j > 0 && (i - j + 1) <= maxLength) {
                 if (dict.contains(s.substring(j - 1, i)) && dp[j - 1]) {
                     dp[i] = true;
+                    break;
                 }
                 j--;
             }
