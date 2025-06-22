@@ -58,5 +58,4 @@ public class BFS {
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>(List.of(l1, l2, l3, l4, l5));
         bfs.bfs(graph);
     }
-
 }

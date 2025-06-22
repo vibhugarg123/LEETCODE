@@ -43,6 +43,4 @@ public class DFS {
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>(List.of(l1, l2, l3, l4, l5));
         dfs.dfs(graph);
     }
-
-
 }
